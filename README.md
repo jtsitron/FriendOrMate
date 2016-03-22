@@ -14,5 +14,5 @@ FriendOrMate is a classifier built using Natural Language Processing to learn th
 
 It then uses its training to predict where a brand new tweet originates: the US or the UK.
 
-Check out the [app](https://FriendOrMate.net)!
+Check out the [app](http://FriendOrMate.net)!
 
