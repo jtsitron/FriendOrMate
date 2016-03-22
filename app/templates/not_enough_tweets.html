@@ -1,0 +1,8 @@
+<!-- extend base layout -->
+{% extends "layout2.html" %}
+
+{% block content %}
+  <h1>Sorry, @{{user}} does not have enough tweets, please try another handle.</h1>
+  <p>Please check back when @{{user}} has at least 100 tweets!</p>
+ 
+{% endblock %}

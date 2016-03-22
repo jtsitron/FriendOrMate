@@ -12,7 +12,7 @@ def main(handle):
                    help='name of twitter account')
 	args = parser.parse_args()
 
-	config = utils.get_config('config.ini')
+	config = utils.get_config('../config.ini')
 	host = config['db']['host']
 	user = config['db']['user']
 	password = config['db']['password']

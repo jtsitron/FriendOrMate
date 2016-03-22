@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Julie Tsitron">
+
+    <title>Friend or Mate?</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- load d3 javascript -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Friend or Mate?</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/">Home</a>
+                     </li>
+                    <li class="page-scroll">
+                        <a href="/#findUserSection">Find Another User</a>   
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#slides">Slides</a>                        
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <section >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>RESULTS:</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div  >
+                
+                    
+                    {% if the_result > 0.5 %}
+
+                    {% set the_result = the_result*100  %} 
+                    <h3>@{{user}} is {{(the_result|round|int)}}% likely to live in the UK!</h3>
+                    <img src="../static/img/Flag_UK3.png" width="750" height="400">
+           
+                    {% else %} 
+
+                    {% set the_result = (1-the_result)*100  %} 
+        
+                    <h3>@{{user}} is {{(the_result|round|int)}}% likely to live in the US!</h3>
+                   
+                    <img src="../static/img/Flag_of_the_United_States.svg.png" width="750" height="400">
+           
+                    {% endif %} 
+                    
+                
+                
+            </div>
+        </div>
+    </section>
+    </header>
+
+    
+
+    <!-- section divider -->
+    <header>
+        <div class="container" id="about">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name"></span>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Results -->
+    
+
+    <!-- About -->
+    <section class="success" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Friend or Mate?</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>What can we learn from a twitter @handle? </p>
+                    <p>The user's location, for one thing!</p> 
+                    <p>The most notable difference between British and American English is the vocabulary.</p>
+                    <p>For example, Brits call the front of a car the bonnet, while Americans call it the hood.</p>
+                </div>
+                <div class="col-lg-4">
+                    
+                    <p>FriendOrMate is a classifier built using Natural Language Processing to learn these subtle differences from tweets. </p>
+                    <p> It then uses its training to predict where a brand new tweet originates: the US or the UK.  </p> 
+                    <p>To learn more about this project, <a href = '/static/documents/Julie_Tsitron_Final_Demo.pdf'> click here </a> or check out the presentation below.</p>
+                </div>
+            </div>
+            <div align = "center" class = "row">
+                <p></p>
+                <p></p>
+                <p></p>
+
+                  <iframe src="https://www.slideshare.net/slideshow/embed_code/key/uBI91DTD3LE5Pm" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/JuliaTsitron/julie-tsitron-final-demo-58389809" title="Julie tsitron final demo" target="_blank">JT_Insight_demo</a> </strong> from <strong><a href="http://www.slideshare.net/JuliaTsitron" target="_blank">JT</a></strong> </div>
+
+                  
+
+                  
+            </div>
+        </div>
+    </section>
+
+      <footer class="text-center" id="slides">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Code</h3>
+                        <p>coming soon!</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Powered By</h3>
+                        <ul class="list-inline">
+                        <p>The Twitter API, sci-kit learn, and a lotta love.  </p>
+<!--                             <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>About Me</h3>
+                        <p>Click <a href="https://linkedin.com/in/jtsitron"> here </a> to learn more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; JT 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="../static/js/jquery-1.12.0.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../static/js/classie.js"></script>
+    <script src="../static/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../static/js/jqBootstrapValidation.js"></script>
+    <!--<script src="../static/js/contact_me.js"></script>-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../static/js/freelancer.js"></script>
+
+   
+
+ 
+
+</body>
+
+</html>

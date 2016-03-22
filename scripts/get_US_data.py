@@ -9,19 +9,28 @@ import json
 #from httplib.client import IncompleteRead
 
 
-conn = MySQLdb.connect("127.0.0.1","username","password","dbname",charset='utf8',use_unicode=True)
 
+
+config = utils.get_config('config.ini')
+host = config['db']['host']
+user = config['db']['user']
+password = config['db']['password']
+db_name = config['db']['dbname']
+
+
+conn = MySQLdb.connect(host,user,password,db_name,charset='utf8',use_unicode=True)
 c = conn.cursor()
 
 
-#consumer key, consumer secret, access token, access secret.
-consumer_key = 'blah'
-consumer_secret = 'blah' 
-access_token = 'blah'
-access_secret = 'blah'
+consumer_key = config['twitter']['consumer_key']
+consumer_secret = config['twitter']['consumer_secret'] 
+access_token = config['twitter']['access_token']
+access_secret = config['twitter']['access_secret']
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
+
+api = tweepy.API(auth)
 
 class listener(StreamListener):
 
